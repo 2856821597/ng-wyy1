@@ -12,7 +12,6 @@ export class SingSheetComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.sheet);
   }
 
 }
