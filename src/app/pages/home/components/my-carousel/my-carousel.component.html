@@ -1,0 +1,19 @@
+
+<div class="carousel">
+    <div class="wrap">
+         <i nz-icon class="arrow left" nzTheme="outline" nzType="left" (click)="onChangeSlide('pre')"></i>
+         <ng-content></ng-content>
+         <ng-template #dot let-number>
+             <i class='dot' [class.active]="activeIndex === number"></i>
+         </ng-template>
+         <i nz-icon class="arrow right" nzTheme="outline" nzType="right" (click)="onChangeSlide('next')"></i>
+    </div>
+</div>
+
+
+
+
+
+
+
+
