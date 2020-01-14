@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { SongSheet } from 'src/app/services/data-type/common.service';
 
 @Component({
@@ -8,10 +8,14 @@ import { SongSheet } from 'src/app/services/data-type/common.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SingSheetComponent implements OnInit {
-@Input() sheet: SongSheet;
+ @Input() sheet: SongSheet;
+ // tslint:disable-next-line: no-output-on-prefix
+ @Output() onPlay = new EventEmitter<number>();
   constructor() { }
 
   ngOnInit() {
   }
-
+   playSheet(id: number) {
+      this.onPlay.emit(id);
+   }
 }
